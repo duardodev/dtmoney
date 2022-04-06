@@ -1,0 +1,52 @@
+import styled from 'styled-components'
+
+export const Container = styled.form`
+  h2 {
+    color: var(--text-title);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  input {
+    background-color: var(--input-background);
+    color: var(--text-body);
+
+    width: 100%;
+    height: 4rem;
+    padding: 0 1.5rem;
+
+    font-size: 1rem;
+    font-weight: 400;
+    border: 1px solid var(--input-border);
+    border-radius: 0.25rem;
+
+    &::placeholder {
+      color: var(--text-body);
+    }
+
+    & + input {
+      margin-top: 1rem;
+    }
+  }
+
+  button[type="submit"] {
+    background-color: var(--green);
+    color: var(--shape);
+
+    width: 100%;
+    height: 4rem;
+    padding: 0 1.25rem;
+    margin-top: 1.5rem;
+
+    font-size: 1rem;
+    font-weight: 600;
+    border: 0;
+    border-radius: 0.25rem;
+
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+`

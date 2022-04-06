@@ -12,6 +12,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --text-title: #363f5f;
     --text-body: #969cb3;
+    --input-background: #e7e9ee;
+    --input-border: #d7d7d7;
   }
 
   * {
@@ -51,5 +53,44 @@ export const GlobalStyle = createGlobalStyle`
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: var(--background);
+    width: 100%;
+    max-width: 576px;
+
+    padding: 4rem 3rem;
+    border-radius: 0.25rem;
+    position: relative;
+  }
+
+  .modal-close {
+    background-color: transparent;
+
+    position: absolute;
+    right: 1.3rem;
+    top: 1.3rem;
+    border: 0;
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 `
