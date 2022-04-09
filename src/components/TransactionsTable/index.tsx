@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Container } from "./styles";
 
-interface TransactionProps {
+interface Transaction {
   id: number;
   title: string;
   type: string;
@@ -11,8 +11,8 @@ interface TransactionProps {
   createdAt: string;
 }
 
-export function TransactionsTable(props: TransactionProps) {
-  const [transactions, setTransactions] = useState<TransactionProps[]>([])
+export function TransactionsTable() {
+  const [transactions, setTransactions] = useState<Transaction[]>([])
 
   useEffect(() => {
     api.get('transactions')
@@ -46,7 +46,7 @@ export function TransactionsTable(props: TransactionProps) {
                 </td>
 
                 <td>{transaction.category}</td>
-                
+
                 <td>
                   {new Intl.DateTimeFormat('pt-BR').format(new Date(transaction.createdAt))}
                 </td>
