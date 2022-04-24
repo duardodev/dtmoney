@@ -93,4 +93,15 @@ export const GlobalStyle = createGlobalStyle`
       filter: brightness(0.8);
     }
   }
+
+  @media (max-width: 585px) {
+    .modal-overlay {
+      align-items: flex-end;
+    }
+
+    .modal-content {
+      padding: 2rem 1.5rem;
+      border-radius: 1rem 1rem 0rem 0rem;
+    }
+  }
 `

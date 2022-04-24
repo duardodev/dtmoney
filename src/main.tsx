@@ -14,10 +14,10 @@ createServer({
       transactions: [
         {
           id: 1,
-          title: 'Freelance de website',
+          title: 'Desenvolvimento de site',
           type: 'deposit',
-          category: 'Dev',
-          amount: 1500,
+          category: 'Vendas',
+          amount: 2500,
           createdAt: new Date('2022-04-08 09:00:00')
         },
         {

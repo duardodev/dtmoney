@@ -34,4 +34,9 @@ export const Container = styled.section`
       color: var(--red)
     }
   }
+
+  @media (max-width: 600px) {
+    margin-top: 2rem;
+    overflow-x: auto;
+  }
 `
