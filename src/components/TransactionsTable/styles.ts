@@ -20,10 +20,14 @@ export const Container = styled.section`
     background-color: var(--shape);
     color: var(--text-body);
     padding: 1rem 2rem;
-    border-radius: 0.25rem;
-
+    
     &:first-child {
       color: var(--text-title);
+      border-radius: 0.25rem 0rem 0rem 0.25rem;
+    }
+
+    &:last-child {
+      border-radius: 0rem 0.25rem 0.25rem 0rem;
     }
 
     &.deposit {

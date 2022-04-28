@@ -29,7 +29,7 @@ export const Container = styled.div`
     }
 
     &.highlight-background {
-      background-color: var(--green);
+      background-color: var(--blue);
       color: var(--shape);
 
       strong {

@@ -31,7 +31,7 @@ export const Container = styled.form`
   }
 
   button[type="submit"] {
-    background-color: var(--green);
+    background-color: var(--blue);
     color: var(--shape);
 
     width: 100%;

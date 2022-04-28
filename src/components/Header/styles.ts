@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
-  background-color: var(--blue);
+  background-color: var(--bg-header);
 `
 
 export const Content = styled.div`
@@ -15,7 +15,7 @@ export const Content = styled.div`
 
   button {
     color: var(--shape);
-    background-color: var(--blue-light);
+    background-color: var(--bg-button);
     font-size: 1rem;
     height: 3rem;
     
