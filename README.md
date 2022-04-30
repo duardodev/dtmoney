@@ -33,7 +33,7 @@ $ git clone https://github.com/sampaiocode/dtmoney.git
 
 ```
 # Acesse a pasta do projeto
-$ cd ignews
+$ cd dtmoney
 
 # Instale as dependências
 $ yarn
