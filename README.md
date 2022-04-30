@@ -8,7 +8,7 @@
 
 <h4 align="center"><a href="https://dtmoney-sampaiocode.vercel.app">Clique para visitar o projeto</a></h4>
 
-<br>
+---
 
 ## 💻 Sobre o projeto
 
@@ -48,4 +48,4 @@ Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais de
 
 ---
 
-Desenvolvido com 💙 por [Deivit Eduardo](https://github.com/martins-rafael)
+Desenvolvido com 💙 por [Deivit Eduardo](https://github.com/sampaiocode)
