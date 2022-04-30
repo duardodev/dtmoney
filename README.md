@@ -14,8 +14,6 @@
 
 Projeto desenvolvido durante o Chapter II da trilha de ReactJS da [Rocketseat](https://www.rocketseat.com.br/). Esse projeto tem o objetivo de facilitar o gerenciamento de finanças pessoais, permitindo o usuário cadastrar novas transações e monitorar as mesmas organizadas em categorias.
 
-<br>
-
 ## 🛠️ Tecnologias utilizadas
 
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
@@ -25,8 +23,6 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Styled Components](https://styled-components.com/)
 - [Axios](https://github.com/axios/axios)
 - [MirajeJS](https://miragejs.com/)
-
-<br>
 
 ## 🚀 Instalação
 
