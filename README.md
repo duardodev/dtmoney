@@ -12,7 +12,7 @@
 
 ## 💻 Sobre o projeto
 
-Projeto desenvolvido durante o Chapter II da trilha de ReactJS da [Rocketseat](https://www.rocketseat.com.br/). Esse projeto tem o objetivo de facilitar o gerenciamento de finanças pessoais, permitindo o usuário cadastrar novas transações e monitorar as mesmas organizadas em categorias.
+Projeto desenvolvido durante o Chapter II do Ignite trilha de ReactJS da [Rocketseat](https://www.rocketseat.com.br/). Esse projeto tem o objetivo de facilitar o gerenciamento de finanças pessoais, permitindo o usuário cadastrar novas transações e monitorar as mesmas organizadas em categorias.
 
 ## 🛠️ Tecnologias utilizadas
 
