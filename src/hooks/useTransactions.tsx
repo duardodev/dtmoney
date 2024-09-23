@@ -1,5 +1,5 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
-import { api } from '../services/api'
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { api } from '../services/api';
 
 interface Transaction {
   id: number;
@@ -10,7 +10,7 @@ interface Transaction {
   createdAt: string;
 }
 
-type TransactionInput = Omit<Transaction, 'id' | 'createdAt'>
+type TransactionInput = Omit<Transaction, 'id' | 'createdAt'>;
 
 interface TransactionProviderProps {
   children: ReactNode;
@@ -19,43 +19,43 @@ interface TransactionProviderProps {
 interface TransactionsContextData {
   transactions: Transaction[];
   createTransaction: (transaction: TransactionInput) => Promise<void>;
+  deleteTransaction: (id: number) => Promise<void>;
 }
 
-const TransactionsContext = createContext<TransactionsContextData>(
-  {} as TransactionsContextData
-)
+const TransactionsContext = createContext<TransactionsContextData>({} as TransactionsContextData);
 
 export function TransactionsProvider({ children }: TransactionProviderProps) {
-  const [transactions, setTransactions] = useState<Transaction[]>([])
- 
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+
   useEffect(() => {
-    api.get('transactions')
-      .then(response => setTransactions(response.data.transactions))
-  }, [])
+    api.get('transactions').then(response => setTransactions(response.data.transactions));
+  }, []);
 
   async function createTransaction(transactionInput: TransactionInput) {
     const response = await api.post('/transactions', {
       ...transactionInput,
-      createdAt: new Date()
-    })
+      createdAt: new Date(),
+    });
 
-    const { transaction } = response.data
+    const { transaction } = response.data;
 
-    setTransactions([
-      ...transactions,
-      transaction
-    ])
+    setTransactions([...transactions, transaction]);
+  }
+
+  async function deleteTransaction(id: number) {
+    await api.delete(`/transactions/${id}`);
+    setTransactions(transactions.filter(transaction => transaction.id !== id));
   }
 
   return (
-    <TransactionsContext.Provider value={{ transactions, createTransaction }}>
+    <TransactionsContext.Provider value={{ transactions, createTransaction, deleteTransaction }}>
       {children}
     </TransactionsContext.Provider>
-  )
+  );
 }
 
 export function useTransactions() {
-  const context = useContext(TransactionsContext)
+  const context = useContext(TransactionsContext);
 
-  return context
+  return context;
 }

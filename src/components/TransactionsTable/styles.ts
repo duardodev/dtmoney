@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.section`
   margin-top: 4rem;
@@ -20,7 +20,7 @@ export const Container = styled.section`
     background-color: var(--shape);
     color: var(--text-body);
     padding: 1rem 2rem;
-    
+
     &:first-child {
       color: var(--text-title);
       border-radius: 0.25rem 0rem 0rem 0.25rem;
@@ -31,11 +31,11 @@ export const Container = styled.section`
     }
 
     &.deposit {
-      color: var(--green)
+      color: var(--green);
     }
 
     &.withdraw {
-      color: var(--red)
+      color: var(--red);
     }
   }
 
@@ -43,4 +43,15 @@ export const Container = styled.section`
     margin-top: 2rem;
     overflow-x: auto;
   }
-`
+
+  button {
+    background-color: #ff5267;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0.5rem;
+  }
+`;

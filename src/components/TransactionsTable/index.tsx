@@ -1,8 +1,9 @@
-import { useTransactions } from "../../hooks/useTransactions";
-import { Container } from "./styles";
+import { useTransactions } from '../../hooks/useTransactions';
+import minusCircleIcon from '../../assets/minus-circle.svg';
+import { Container } from './styles';
 
 export function TransactionsTable() {
-  const { transactions } = useTransactions()
+  const { transactions, deleteTransaction } = useTransactions();
 
   return (
     <Container>
@@ -26,20 +27,24 @@ export function TransactionsTable() {
                   {transaction.type == 'withdraw' ? '-' : ''}
                   {new Intl.NumberFormat('pt-BR', {
                     style: 'currency',
-                    currency: 'BRL'
+                    currency: 'BRL',
                   }).format(transaction.amount)}
                 </td>
 
                 <td>{transaction.category}</td>
 
+                <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(transaction.createdAt))}</td>
+
                 <td>
-                  {new Intl.DateTimeFormat('pt-BR').format(new Date(transaction.createdAt))}
+                  <button onClick={() => deleteTransaction(transaction.id)}>
+                    <img src={minusCircleIcon} alt="Excluir transação" />
+                  </button>
                 </td>
               </tr>
-            )   
+            );
           })}
         </tbody>
       </table>
     </Container>
-  )
+  );
 }

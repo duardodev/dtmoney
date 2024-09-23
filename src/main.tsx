@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { App } from './App'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { App } from './App';
 
-import { createServer, Model } from 'miragejs'
+import { createServer, Model, Response } from 'miragejs';
 
 createServer({
   models: {
-    transaction: Model
+    transaction: Model,
   },
 
   seeds(server) {
@@ -18,7 +18,7 @@ createServer({
           type: 'deposit',
           category: 'Vendas',
           amount: 2500,
-          createdAt: new Date('2022-04-08 09:00:00')
+          createdAt: new Date('2022-04-08 09:00:00'),
         },
         {
           id: 2,
@@ -26,30 +26,42 @@ createServer({
           type: 'withdraw',
           category: 'Casa',
           amount: 500,
-          createdAt: new Date('2022-04-09 09:00:00')
-        }
-      ]
-    })
+          createdAt: new Date('2022-04-09 09:00:00'),
+        },
+      ],
+    });
   },
 
   routes() {
-    this.namespace = 'api'
+    this.namespace = 'api';
 
     this.get('/transactions', () => {
-      return this.schema.all('transaction')
-    })
+      return this.schema.all('transaction');
+    });
 
     this.post('/transactions', (schema, request) => {
-      const data = JSON.parse(request.requestBody)
+      const data = JSON.parse(request.requestBody);
 
-      return schema.create('transaction', data)
-    })
-  }
-})
+      return schema.create('transaction', data);
+    });
+
+    this.delete('/transactions/:id', (schema, request) => {
+      const id = request.params.id;
+      const transaction = schema.find('transaction', id);
+
+      if (transaction) {
+        transaction.destroy();
+        return { message: 'Transaction deleted successfully' };
+      } else {
+        return new Response(404, { some: 'header' }, { error: 'Transaction not found' });
+      }
+    });
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
-)
+);
