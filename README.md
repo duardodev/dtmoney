@@ -23,29 +23,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Styled Components](https://styled-components.com/)
 - [Axios](https://github.com/axios/axios)
 - [MirajeJS](https://miragejs.com/)
-
-## 🚀 Instalação
-
-```
-# Abra um terminal e copie este repositório com o comando
-$ git clone https://github.com/sampaiocode/dtmoney.git
-```
-
-```
-# Acesse a pasta do projeto
-$ cd dtmoney
-
-# Instale as dependências
-$ yarn
-
-# Inicie o projeto
-$ yarn dev
-```
-
-## 📝 Licença
-
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
-
+  
 ---
 
 Desenvolvido com 💙 por [Deivit Eduardo](https://github.com/sampaiocode)
